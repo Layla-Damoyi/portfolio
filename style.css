@@ -1,0 +1,217 @@
+:root {
+  --lilac: #c77dff;
+  --lilac-soft: #e0aaff;
+  --dark-bg: #0d0d0d;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--dark-bg);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero */
+.hero {
+  height: 50vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#matrix-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-left: 10%;
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Profile */
+.glow-frame {
+  padding: 20px;
+  border-radius: 40%;
+  box-shadow: 0 0 25px var(--lilac);
+  animation: flicker 3s infinite;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 40%;
+}
+
+/* Typewriter */
+#typewriter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 15px var(--lilac),
+    0 0 30px var(--lilac);
+}
+
+/* Sections */
+section {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+h2 {
+  color: var(--lilac);
+  font-size: 2.2rem;
+}
+
+/* Projects */
+.project-grid {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  gap: 30px;                /* space between each card */
+  flex-wrap: wrap;           /* wrap on smaller screens */
+}
+
+.project-card {
+  width: 200px;             /* slightly smaller for cute look */
+  height: 200px;
+  border-radius: 50%;       /* fully round */
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;       /* make image itself round */
+  transition: transform 0.3s;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);   /* subtle zoom */
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px var(--lilac);  /* glow on hover */
+}
+
+/* Overlay for project titles */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;   /* match the round card */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Skills Section - Remove bullets and style */
+.skill-category ul {
+  list-style: none;   /* remove bullets */
+  padding-left: 0;    /* remove default indentation */
+  margin: 0;          /* remove extra margin */
+}
+
+.skill-category ul li {
+  background: #111;   /* dark box for each skill */
+  color: #fff;        /* white text */
+  display: inline-block;  /* horizontal within category */
+  padding: 8px 12px;  /* spacing */
+  border-radius: 12px;    /* rounded boxes */
+  margin: 4px;        /* space between each skill */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-category ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--lilac);  /* neon glow on hover */
+}
+
+
+/* Contact */
+#contact {
+  background: #fff;
+  color: #111;
+}
+
+.contact-btn {
+  border: 2px solid var(--lilac);
+  color: var(--lilac);
+  padding: 20px 40px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: var(--lilac);
+  color: #fff;
+}
+
+/* Footer */
+footer img:hover {
+  filter: drop-shadow(0 0 12px var(--lilac));
+}
+/* Footer Social Icons */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #111;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;       /* spacing between icons */
+  flex-wrap: wrap;
+}
+
+footer .social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;           /* round button size */
+  height: 55px;
+  border-radius: 50%;    /* circle */
+  background: #111;      /* dark circle background */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+footer .social-icons a img {
+  width: 30px;           /* icon smaller than button */
+  height: 30px;
+  border-radius: 50%;    /* make image itself round */
+  object-fit: cover;
+  display: block;
+}
+
+/* Neon lilac glow on hover */
+footer .social-icons a:hover {
+  transform: scale(1.2);   /* slightly bigger on hover */
+  box-shadow: 0 0 10px var(--lilac), 
+              0 0 20px var(--lilac), 
+              0 0 30px var(--lilac), 
+              0 0 40px var(--lilac);  /* neon glow */
+}
